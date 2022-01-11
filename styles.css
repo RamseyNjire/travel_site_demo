@@ -3,6 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    transition: 0.5s;
 }
 
 body {
@@ -46,6 +48,16 @@ section {
     align-items: center;
 }
 
+.banner:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(to top,#111,transparent)
+}
+
 .fit-background {
     position: absolute;
     top: 0;
@@ -70,13 +82,13 @@ section {
 
 .content p {
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 2rem;
 }
 
 .content span {
     display: block;
     color: #fff;
-    font-size: 0.8rem;
+    font-size: 0.5rem;
 }
 
 .content span a {
@@ -102,7 +114,210 @@ section {
 }
 
 .content-box {
-    max-width: 50%;
+    min-width: 50%;
     width: 50%;
-    
+    text-align: end;
+    padding-right: 40px;
+}
+
+.title {
+    font-weight: 600;
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.text {
+    color: #fff;
+    font-size: 1rem;
+}
+
+.image-box {
+    position: relative;
+    min-width: 50%;
+    width: 50%;
+    min-height: 500px;
+}
+
+.second-banner, .third-banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.second-banner:before, .third-banner:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    z-index: 1;
+    background: linear-gradient(to bottom,#111,transparent)
+}
+
+.second-banner:after, .third-banner:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    z-index: 1;
+    background: linear-gradient(to top,#111,transparent)
+}
+
+.destinations {
+    text-align: center;
+}
+
+.most-popular-content {
+    text-align: center;
+}
+
+.destination-list {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.box {
+    position: relative;
+    min-width: 350px;
+    height: 480px;
+    background: #191919;
+    transition: 0.5s;
+    margin: 10px;
+}
+
+.destination-list:hover .box {
+    opacity: 0.2;
+}
+
+.destination-list .box:hover {
+    opacity: 1;
+}
+
+.box {
+    margin-top: 100px;
+}
+
+.image-box {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.box .info {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.box .info h2 {
+    color: #fff;
+    font-weight: 500;
+    line-heigh: 1.2rem;
+}
+
+.box .info h2 span {
+    font-size: 0.8rem;
+    font-weight: 300;
+    opacity: 0.5.
+}
+
+.view-more {
+    margin-top: 150px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer h4 {
+    color: #666;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
+}
+
+footer h4 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.socials {
+    position: relative;
+    display: flex;
+}
+
+.socials li {
+    list-style: none;
+}
+
+.socials li a {
+    text-decoration: none;
+    margin: 0 20px;
+}
+
+.socials li a img {
+    filter: invert(1);
+    max-width: 30px;
+}
+
+@media (max-width: 767px) {
+    section {
+        padding: 40px;
+    }
+
+    .banner, .content h2 {
+        font-size: 2.5rem;
+    }
+    .banner, .content p {
+        font-size: 1rem;
+    }
+    .about {
+        flex-direction: column;
+    }
+    .content-box {
+        min-width: 100%;
+        width: 100%;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .image-box {
+        min-height: 250px;
+    }
+
+    .button {
+        margin-bottom: 50px;
+    }
+
+    .destination-list .box {
+        max-width: 350px;
+        min-width: initial;
+        width: 350px;
+        height: 400px;
+    }
+
+    .destination-list .box .image-box {
+        height: 320px;
+    }
+    .socials li a img {
+        max-width: 20px;
+    }  
 }
